@@ -1,0 +1,33 @@
+<ion-header>
+  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+       <ion-button  href="/home">
+        <ion-icon name="arrow-dropleft"></ion-icon>
+          
+          </ion-button>
+    </ion-buttons>
+    <ion-title>cadastro produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+     
+          <ion-input type="hidden" name="model.codigo" [(ngModel)]="model.codigo"></ion-input>
+        
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-input type="text" name="model.descricao" [(ngModel)]="model.descricao"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Quantidade</ion-label>
+        <ion-input type="text" name="model.qtde" [(ngModel)]="model.qtde"></ion-input>
+      </ion-item>
+      <ion-input type="hidden" name="model.foto" [(ngModel)]="model.foto"></ion-input>
+      <div>
+         <ion-button expand="full" color="success" (click)="salvar()">Salvar</ion-button>
+      </div>
+
+  </ion-list>
+</ion-content>

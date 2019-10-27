@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      Olá {{usuario.nome}}
+    </ion-buttons>
+   
+    <ion-title>
+      App Start
+    </ion-title>
+    <ion-buttons slot="primary" (click)="sair()">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let prod of lista">
+    <ion-card-header>
+      <ion-card-subtitle>{{prod.descricao}}</ion-card-subtitle>
+      <ion-card-title>{{prod.qtde}}</ion-card-title>
+    </ion-card-header>
+    <ion-img [src]="'http://localhost:52845/imagens/'+ prod.foto"></ion-img>
+    <ion-card-content>
+      {{prod.codigo}}  8GB de Ram, Processador Intel Core 7
+      <ion-button href="/detalhes/{{prod.codigo}}"   ><ion-icon name="cart"></ion-icon>Comprar</ion-button>
+    </ion-card-content>
+   
+  </ion-card>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" href="/cadastro-produtos">
+      <ion-icon name="add-circle-outline" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
